@@ -33,8 +33,8 @@ function build_nxengine-evo() {
 
      cd ..
      downloadAndExtract "https://www.cavestory.org/downloads/cavestoryen.zip"
-     cp -r CaveStory/data/ ./
-	cp -r CaveStory/Doukutsu.exe ./
+     cp -r cavestoryen/CaveStory/data/ ./
+	cp -r cavestoryen/CaveStory/Doukutsu.exe ./
 
     downloadAndExtract "https://github.com/nxengine/translations/releases/download/v1.14/all.zip" "translations"
     cp -r translations/data ./
