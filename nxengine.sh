@@ -46,7 +46,7 @@ function build_nxengine-evo() {
 
 function install_nxengine-evo() {
      cd nxengine-evo/build
-	sudo make install
+	make install
 }
 
 function configure_nxengine-evo() {
