@@ -18,7 +18,7 @@ rp_module_section="opt"
 rp_module_flags="!armv6 !mali"
 
 function depends_nxengine-evo() {
-   sudo apt install build-essential libpng-dev libjpeg-dev make cmake cmake-data libsdl2-dev libsdl2-doc libsdl2-gfx-dev libsdl2-gfx-doc libsdl2-image-dev libsdl2-mixer-dev libsdl2-net-dev libsdl2-ttf-dev 
+   getDepends build-essential libpng-dev libjpeg-dev make cmake cmake-data libsdl2-dev libsdl2-doc libsdl2-gfx-dev libsdl2-gfx-doc libsdl2-image-dev libsdl2-mixer-dev libsdl2-net-dev libsdl2-ttf-dev 
 }
 
 function sources_nxengine-evo() {
