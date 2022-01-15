@@ -45,7 +45,7 @@ function build_nxengine-evo() {
 }
 
 function install_nxengine-evo() {
-     cd nxengine-evo/build
+     cd "$md_build/build"
 	make install
 }
 
