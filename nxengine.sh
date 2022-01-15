@@ -32,13 +32,11 @@ function build_nxengine-evo() {
      make
 
      cd ..
-     wget "https://www.cavestory.org/downloads/cavestoryen.zip"
-     unzip cavestoryen.zip
+     downloadAndExtract "https://www.cavestory.org/downloads/cavestoryen.zip"
      cp -r CaveStory/data/ ./
 	cp -r CaveStory/Doukutsu.exe ./
 
-    wget "https://github.com/nxengine/translations/releases/download/v1.14/all.zip"
-    mkdir translations && unzip all.zip -d translations
+    downloadAndExtract "https://github.com/nxengine/translations/releases/download/v1.14/all.zip" "translations"
     cp -r translations/data ./
 
 	build/nxextract
