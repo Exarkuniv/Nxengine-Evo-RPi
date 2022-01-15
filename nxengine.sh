@@ -26,7 +26,6 @@ function sources_nxengine-evo() {
 }
 
 function build_nxengine-evo() {
-     cd nxengine-evo
      mkdir build 
      cd build
      cmake -DCMAKE_BUILD_TYPE=Release -Wno-dev -DCMAKE_INSTALL_PREFIX=/home/pi/RetroPie/roms/ports/CaveStory ..
