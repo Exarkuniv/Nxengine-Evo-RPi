@@ -28,7 +28,7 @@ function sources_nxengine-evo() {
 function build_nxengine-evo() {
      mkdir build 
      cd build
-     cmake -DCMAKE_BUILD_TYPE=Release -Wno-dev -DCMAKE_INSTALL_PREFIX=/home/pi/RetroPie/roms/ports/CaveStory ..
+     cmake -DCMAKE_BUILD_TYPE=Release -Wno-dev -DCMAKE_INSTALL_PREFIX="$romdir/ports/CaveStory" ..
      make
 
      cd ..
@@ -50,6 +50,6 @@ function install_nxengine-evo() {
 }
 
 function configure_nxengine-evo() {
-    addPort "$md_id" "cavestory" "Cave Story" "/home/pi/RetroPie/roms/ports/CaveStory/bin/nxengine-evo"
-       chown -R $user:$user "/home/pi/RetroPie/roms/ports/CaveStory"
+    addPort "$md_id" "cavestory" "Cave Story" "$romdir/ports/CaveStory/bin/nxengine-evo"
+       chown -R $user:$user "$romdir/ports/CaveStory"
 }
