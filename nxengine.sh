@@ -18,7 +18,7 @@ rp_module_section="opt"
 rp_module_flags="!armv6 !mali"
 
 function depends_nxengine-evo() {
-   getDepends build-essential libpng-dev libjpeg-dev make cmake cmake-data libsdl2-dev libsdl2-doc libsdl2-gfx-dev libsdl2-gfx-doc libsdl2-image-dev libsdl2-mixer-dev libsdl2-net-dev libsdl2-ttf-dev 
+    getDepends build-essential libpng-dev libjpeg-dev make cmake cmake-data libsdl2-dev libsdl2-doc libsdl2-gfx-dev libsdl2-gfx-doc libsdl2-image-dev libsdl2-mixer-dev libsdl2-net-dev libsdl2-ttf-dev 
 }
 
 function sources_nxengine-evo() {
@@ -26,28 +26,28 @@ function sources_nxengine-evo() {
 }
 
 function build_nxengine-evo() {
-     mkdir build 
-     cd build
-     cmake -DCMAKE_BUILD_TYPE=Release -Wno-dev -DCMAKE_INSTALL_PREFIX="$romdir/ports/CaveStory" ..
-     make
+    mkdir build 
+    cd build
+    cmake -DCMAKE_BUILD_TYPE=Release -Wno-dev -DCMAKE_INSTALL_PREFIX="$romdir/ports/CaveStory" ..
+    make
 
-     cd ..
-     downloadAndExtract "https://www.cavestory.org/downloads/cavestoryen.zip"
-     cp -r cavestoryen/CaveStory/data/ ./
-	cp -r cavestoryen/CaveStory/Doukutsu.exe ./
+    cd ..
+    downloadAndExtract "https://www.cavestory.org/downloads/cavestoryen.zip"
+    cp -r cavestoryen/CaveStory/data/ ./
+    cp -r cavestoryen/CaveStory/Doukutsu.exe ./
 
     downloadAndExtract "https://github.com/nxengine/translations/releases/download/v1.14/all.zip" "translations"
     cp -r translations/data ./
 
-	build/nxextract
+    build/nxextract
 }
 
 function install_nxengine-evo() {
-     cd "$md_build/build"
-	make install
+    cd "$md_build/build"
+    make install
 }
 
 function configure_nxengine-evo() {
     addPort "$md_id" "cavestory" "Cave Story" "$romdir/ports/CaveStory/bin/nxengine-evo"
-       chown -R $user:$user "$romdir/ports/CaveStory"
+    chown -R $user:$user "$romdir/ports/CaveStory"
 }
