@@ -12,6 +12,7 @@
 rp_module_id="nxengine-evo"
 rp_module_desc="Cave Story engine clone - NXEngine-Evo"
 rp_module_licence="GPL3 http://nxengine.sourceforge.net/LICENSE"
+rp_module_repo="git https://github.com/nxengine/nxengine-evo.git"
 rp_module_help=""
 rp_module_section="opt"
 rp_module_flags="!armv6 !mali"
@@ -21,7 +22,7 @@ function depends_nxengine-evo() {
 }
 
 function sources_nxengine-evo() {
-   git clone https://github.com/nxengine/nxengine-evo.git
+    gitPullOrClone
 }
 
 function build_nxengine-evo() {
