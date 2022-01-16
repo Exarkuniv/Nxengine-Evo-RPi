@@ -13,12 +13,12 @@ rp_module_id="nxengine-evo"
 rp_module_desc="Cave Story engine clone - NXEngine-Evo"
 rp_module_licence="GPL3 http://nxengine.sourceforge.net/LICENSE"
 rp_module_repo="git https://github.com/nxengine/nxengine-evo.git"
-rp_module_help=""
+rp_module_help="NXEngine by Caitlin Shaw, refactoring by isage et al."
 rp_module_section="opt"
 rp_module_flags="!armv6 !mali"
 
 function depends_nxengine-evo() {
-    getDepends build-essential libpng-dev libjpeg-dev make cmake cmake-data libsdl2-dev libsdl2-doc libsdl2-gfx-dev libsdl2-gfx-doc libsdl2-image-dev libsdl2-mixer-dev libsdl2-net-dev libsdl2-ttf-dev 
+    getDepends libpng-dev libjpeg-dev cmake libsdl2-dev libsdl2-gfx-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-net-dev libsdl2-ttf-dev 
 }
 
 function sources_nxengine-evo() {
@@ -33,11 +33,11 @@ function build_nxengine-evo() {
 
     cd ..
     downloadAndExtract "https://www.cavestory.org/downloads/cavestoryen.zip"
-    cp -r cavestoryen/CaveStory/data/ ./
-    cp -r cavestoryen/CaveStory/Doukutsu.exe ./
+    cp -r cavestoryen/CaveStory/data .
+    cp cavestoryen/CaveStory/Doukutsu.exe .
 
     downloadAndExtract "https://github.com/nxengine/translations/releases/download/v1.14/all.zip" "translations"
-    cp -r translations/data ./
+    cp -r translations/data .
 
     build/nxextract
 }
