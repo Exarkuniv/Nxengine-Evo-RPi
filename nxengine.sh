@@ -28,7 +28,7 @@ function sources_nxengine-evo() {
 function build_nxengine-evo() {
     mkdir build 
     cd build
-    cmake -DCMAKE_BUILD_TYPE=Release -Wno-dev -DCMAKE_INSTALL_PREFIX="$romdir/ports/CaveStory" ..
+    cmake -DCMAKE_BUILD_TYPE=Release -Wno-dev -DPORTABLE=On ..
     make
 
     cd ..
@@ -43,12 +43,13 @@ function build_nxengine-evo() {
 }
 
 function install_nxengine-evo() {
-    cd "$md_build/build"
-    make install
+    md_ret_files=(
+        'build/nxengine-evo'
+        'data'
+    )
 }
 
 function configure_nxengine-evo() {
     moveConfigDir "$home/.local/share/nxengine" "$md_conf_root/cavestory"
-    addPort "$md_id" "cavestory" "Cave Story" "$romdir/ports/CaveStory/bin/nxengine-evo"
-    chown -R $user:$user "$romdir/ports/CaveStory"
+    addPort "$md_id" "cavestory" "Cave Story" "$md_inst/nxengine-evo"
 }
