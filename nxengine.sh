@@ -48,6 +48,7 @@ function install_nxengine-evo() {
 }
 
 function configure_nxengine-evo() {
+    moveConfigDir "$home/.local/share/nxengine" "$md_conf_root/cavestory"
     addPort "$md_id" "cavestory" "Cave Story" "$romdir/ports/CaveStory/bin/nxengine-evo"
     chown -R $user:$user "$romdir/ports/CaveStory"
 }
