@@ -28,13 +28,13 @@ function sources_nxengine-evo() {
 function build_nxengine-evo() {
     mkdir build 
     cd build
-    cmake -DCMAKE_BUILD_TYPE=Release -Wno-dev -DCMAKE_INSTALL_PREFIX="$romdir/ports/CaveStory" ..
+    CFLAGS='-DDATADIR="\"/home/pi/RetroPie/roms/ports/cavestory/data/\""' CXXFLAGS='-DDATADIR="\"/home/pi/RetroPie/roms/ports/cavestory/data/\""' cmake -DCMAKE_BUILD_TYPE=Release -DPORTABLE=On ..
     make
 
     cd ..
     downloadAndExtract "https://www.cavestory.org/downloads/cavestoryen.zip" "cavestoryen"
-    cp -r cavestoryen/CaveStory/data .
-    cp cavestoryen/CaveStory/Doukutsu.exe .
+    cp -r cavestoryen/caveStory/data .
+    cp cavestoryen/caveStory/Doukutsu.exe .
 
     downloadAndExtract "https://github.com/nxengine/translations/releases/download/v1.14/all.zip" "translations"
     cp -r translations/data .
@@ -43,12 +43,16 @@ function build_nxengine-evo() {
 }
 
 function install_nxengine-evo() {
-    cd "$md_build/build"
-    make install
+   md_ret_files=(
+        'build/nxengine-evo'
+    )
+   mkRomDir "ports/caveStory"
+   cp -r data "$romdir/ports/caveStory"
 }
 
 function configure_nxengine-evo() {
     moveConfigDir "$home/.local/share/nxengine" "$md_conf_root/cavestory"
-    addPort "$md_id" "cavestory" "Cave Story" "$romdir/ports/CaveStory/bin/nxengine-evo"
-    chown -R $user:$user "$romdir/ports/CaveStory"
+    addPort "$md_id" "cavestory" "Cave Story" "$md_inst/nxengine-evo"
+    chown -R $user:$user "$romdir/ports/caveStory"
 }
+
