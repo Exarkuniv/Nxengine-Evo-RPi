@@ -14,11 +14,11 @@ rp_module_desc="Cave Story engine clone - NXEngine-Evo"
 rp_module_help="Keyboard required for initial setup, gamepad controls can be configured in game options menu."
 rp_module_licence="GPL3 http://nxengine.sourceforge.net/LICENSE"
 rp_module_repo="git https://github.com/nxengine/nxengine-evo.git"
-rp_module_section="exp" 
+rp_module_section="exp"
 rp_module_flags="!armv6 !mali"
 
 function depends_nxengine-evo() {
-    getDepends libpng-dev libjpeg-dev cmake libsdl2-dev libsdl2-gfx-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-net-dev libsdl2-ttf-dev 
+    getDepends libpng-dev libjpeg-dev cmake libsdl2-dev libsdl2-gfx-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-net-dev libsdl2-ttf-dev
 }
 
 function sources_nxengine-evo() {
@@ -26,14 +26,14 @@ function sources_nxengine-evo() {
 }
 
 function build_nxengine-evo() {
-    mkdir build 
+    mkdir build
     cd build
     CFLAGS='-DDATADIR="\"$romdir/ports/CaveStory/$md_id/data/\""' CXXFLAGS='-DDATADIR="\"$romdir/ports/CaveStory/$md_id/data/\""' cmake -DCMAKE_BUILD_TYPE=Release -DPORTABLE=On ..
     make
     md_ret_require=(
-        '$md_build/build/nxengine-evo'
-        '$md_build/build/nxextract'
-    (
+        "$md_build/build/nxengine-evo"
+        "$md_build/build/nxextract"
+    )
 }
 
 function install_nxengine-evo() {
@@ -45,7 +45,7 @@ function install_nxengine-evo() {
 }
 
 function gamedata_nxengine-evo() {
-    if [[ ! -f "$romdir/ports/CaveStory/$md_id/Doukutsu.exe" ]]; then 
+    if [[ ! -f "$romdir/ports/CaveStory/$md_id/Doukutsu.exe" ]]; then
         downloadAndExtract "https://cavestory.org/downloads/cavestoryen.zip" "$romdir/ports/CaveStory/$md_id"
         mv "$romdir/ports/CaveStory/$md_id/CaveStory/*" "$romdir/ports/CaveStory/$md_id"
         rmdir "$romdir/ports/CaveStory/$md_id/CaveStory"
