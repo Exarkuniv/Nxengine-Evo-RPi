@@ -52,8 +52,7 @@ function gamedata_nxengine-evo() {
     fi
     [[ ! -d "$romdir/ports/CaveStory/$md_id/data/lang" ]] && downloadAndExtract "https://github.com/nxengine/translations/releases/download/v1.14/all.zip" "$romdir/ports/CaveStory/$md_id"
     if [[ ! -d "$romdir/ports/CaveStory/$md_id/data/mods" ]]; then
-        mkdir -p "$romdir/ports/CaveStory/$md_id/data/mods"
-        download "https://github.com/nxengine/nxengine-evo/releases/download/v2.6.5/boss_rush.zip" "$romdir/ports/CaveStory/$md_id/data/mods"
+        downloadAndExtract "https://github.com/nxengine/nxengine-evo/releases/download/v2.6.5/boss_rush.zip" "$romdir/ports/CaveStory/$md_id"
     fi
     cp -r "$md_inst/data" "$romdir/ports/CaveStory/$md_id"
     pushd "$romdir/ports/CaveStory/$md_id"; "$md_inst/nxextract"; popd
