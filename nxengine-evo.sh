@@ -47,7 +47,7 @@ function install_nxengine-evo() {
 function gamedata_nxengine-evo() {
     if [[ ! -f "$romdir/ports/CaveStory/$md_id/Doukutsu.exe" ]]; then
         downloadAndExtract "https://cavestory.org/downloads/cavestoryen.zip" "$romdir/ports/CaveStory/$md_id"
-        mv "$romdir/ports/CaveStory/$md_id/CaveStory/*" "$romdir/ports/CaveStory/$md_id"
+        mv "$romdir/ports/CaveStory/$md_id/CaveStory/"* "$romdir/ports/CaveStory/$md_id"
         rmdir "$romdir/ports/CaveStory/$md_id/CaveStory"
     fi
     [[ ! -d "$romdir/ports/CaveStory/$md_id/data/lang" ]] && downloadAndExtract "https://github.com/nxengine/translations/releases/download/v1.14/all.zip" "$romdir/ports/CaveStory/$md_id"
