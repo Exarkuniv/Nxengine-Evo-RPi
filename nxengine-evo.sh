@@ -11,7 +11,7 @@
 
 rp_module_id="nxengine-evo"
 rp_module_desc="Cave Story engine clone - NXEngine-Evo"
-rp_module_help="Keyboard required for initial setup, gamepad controls can be configured in game options menu."
+rp_module_help="Keyboard required for initial setup, gamepad controls can be configured in game options menu.\n\nSet runcommand video mode to match in-game resolution - recommended 640x480."
 rp_module_licence="GPL3 http://nxengine.sourceforge.net/LICENSE"
 rp_module_repo="git https://github.com/nxengine/nxengine-evo.git"
 rp_module_section="exp"
