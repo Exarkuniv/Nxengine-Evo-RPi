@@ -28,7 +28,7 @@ function sources_nxengine-evo() {
 function build_nxengine-evo() {
     mkdir build
     cd build
-    CFLAGS='-DDATADIR="\"$romdir/ports/CaveStory/$md_id/data/\""' CXXFLAGS='-DDATADIR="\"$romdir/ports/CaveStory/$md_id/data/\""' cmake -DCMAKE_BUILD_TYPE=Release -DPORTABLE=On ..
+    CFLAGS='-DDATADIR="\"'"$romdir"'/ports/CaveStory/'"$md_id"'/data/\""' CXXFLAGS='-DDATADIR="\"'"$romdir"'/ports/CaveStory/'"$md_id"'/data/\""' cmake -DCMAKE_BUILD_TYPE=Release -DPORTABLE=On ..
     make
     md_ret_require=(
         "$md_build/build/nxengine-evo"
