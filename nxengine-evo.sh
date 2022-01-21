@@ -18,7 +18,7 @@ rp_module_section="exp"
 rp_module_flags="!armv6 !mali"
 
 function depends_nxengine-evo() {
-    getDepends libpng-dev libjpeg-dev cmake libsdl2-dev libsdl2-gfx-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-net-dev libsdl2-ttf-dev
+    getDepends libpng-dev libjpeg-dev cmake libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev
 }
 
 function sources_nxengine-evo() {
