@@ -1,3 +1,8 @@
+#### Get the latest version in RetroPie-Extra
+This version is archived. This project has been added to the RetroPie-Extra collection. Get the latest version here:
+
+https://github.com/Exarkuniv/RetroPie-Extra
+
 # Nxengine-Evo-RPi
 Nxengine-Evo installer for Pi4
 
